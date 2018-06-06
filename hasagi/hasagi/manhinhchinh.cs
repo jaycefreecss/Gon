@@ -23,7 +23,7 @@ namespace Hasagi
         {
 
 
-            lbdatetime.Text = "Ngày " + DateTime.Now.ToString(" dd") + " Tháng " + DateTime.Now.ToString("mm") + " Năm " + DateTime.Now.ToString("yyyy");
+            lbdatetime.Text = "Ngày " + DateTime.Now.ToString("dd") + " Tháng " + DateTime.Now.Month + " Năm " + DateTime.Now.ToString("yyyy");
             lbadmin.Text ="Xin chào "+ UserName;
             
         }
@@ -31,7 +31,9 @@ namespace Hasagi
        
         private void panel4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            dangnhap dn = new dangnhap();
+            dn.Show();
         }
 
 
@@ -58,6 +60,7 @@ namespace Hasagi
             
             if (UserName == "admin")
             {
+                panel5.Visible = false;
                 this.Hide();
                 Camera cr = new Camera();
                 cr.Show();
@@ -76,14 +79,9 @@ namespace Hasagi
 
         }
 
-        
-       
-       
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
 
-      
-
-       
-
-       
+        }
     }
 }
